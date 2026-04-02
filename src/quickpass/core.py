@@ -44,7 +44,7 @@ def generate_password(
     return ''.join(secrets.choice(char_set) for i in range(length))
 
 
-def parse_ags() -> argparse.Namespace:
+def parse_args() -> argparse.Namespace:
     """Parse command line arguments"""
     parser = argparse.ArgumentParser(
         prog='QuickPass',
@@ -98,7 +98,7 @@ def parse_ags() -> argparse.Namespace:
 
 def main() -> None:
     try:
-        args = parse_ags()
+        args = parse_args()
 
         if args.count < 1:
             raise argparse.ArgumentTypeError('Count must be a positive integer (> 0)')
@@ -107,9 +107,9 @@ def main() -> None:
             password = generate_password(
                 args.length,
                 use_digits=args.use_digits,
+                use_upper=args.use_upper,
                 use_lower=args.use_lower,
                 use_special=args.use_special,
-                use_upper=args.use_upper,
             )
 
             print(password)
