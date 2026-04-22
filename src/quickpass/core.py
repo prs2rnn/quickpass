@@ -49,7 +49,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         prog='QuickPass',
         description='QuickPass - secure password generator using cryptographically strong randomness',
-        epilog="Usage:\n" "  QuickPass -l 16 --no-digits\n" "  QuickPass -c 5 -l 20",
+        epilog="Usage:\n" "  quickpass -l 16 --no-digits\n" "  quickpass -c 5 -l 20",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
     parser.add_argument(
